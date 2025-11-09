@@ -3,13 +3,55 @@
   box-sizing: border-box;
 }
 
-/* Body layout */
+/* Body layout - remove flex and display */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  display: flex;
   background: #f6fbff;
   min-height: 100vh;
+}
+
+/* Header/Logo Styling */
+/* Header/Logo Styling - STICKY */
+.site-header {
+  background: linear-gradient(135deg, #1867be 0%, #2566a3 100%);
+  color: #fff;
+  padding: 20px 5vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border-bottom: 4px solid #ffd966;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.site-tagline {
+  margin: 6px 0 0 0;
+  font-size: 1.1em;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+}
+
+/* Main wrapper for sidebar and content */
+.main-wrapper {
+  display: flex;
+  min-height: calc(100vh - 120px);
 }
 
 /* Sidebar styling */
@@ -21,6 +63,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  position: sticky;
+  top: 120px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  align-self: flex-start;
 }
 
 #profile, #calendar, #past-searches {
@@ -192,7 +239,20 @@ body {
   font-size: 1.07em;
 }
 
+/* Responsive header */
+@media (max-width: 700px) {
+  .site-logo {
+    font-size: 1.8em;
+  }
+  .site-tagline {
+    font-size: 0.95em;
+  }
+}
+
 @media (max-width: 900px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
   #sidebar {
     width: 100%;
     flex-direction: row;
@@ -207,4 +267,22 @@ body {
   #journey-container {
     padding: 16px 4vw;
   }
+}
+/* Student Offers styling */
+#student-offers {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px #dfecfb7a;
+}
+
+#student-offers h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  color: #2566a3;
+}
+
+#student-offers button:hover {
+  background: #166ad5;
 }

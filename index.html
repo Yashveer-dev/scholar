@@ -2,35 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hackathon Journey Planner</title>
+  <title>Smart Scholarz - Hackathon Journey Planner</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="sidebar">
-    <div id="profile">
-  <h3>Student Profile</h3>
-  <div id="profile-data">
-    <p>Name: <span id="student-name">Not set</span></p>
-    <p>Branch: <span id="student-branch">Not set</span></p>
-    <p>College: <span id="student-college">Not set</span></p>
-    <p>Location: <span id="student-location">Not set</span></p>
-    <button onclick="window.location.href='profile.html'" style="margin-top:10px; padding:6px 12px; background:#198be7; color:#fff; border:none; border-radius:5px; cursor:pointer;">Edit Profile</button>
+  <header class="site-header">
+    <div class="header-content">
+      <h1 class="site-logo">Smart Scholarz</h1>
+      <p class="site-tagline">Your Journey to Hackathons Simplified</p>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <div id="sidebar">
+  <div id="profile">
+    <h3>Student Profile</h3>
+    <div id="profile-data">
+      <p>Name: <span id="student-name">Not set</span></p>
+      <p>Branch: <span id="student-branch">Not set</span></p>
+      <p>College: <span id="student-college">Not set</span></p>
+      <p>Location: <span id="student-location">Not set</span></p>
+      <button onclick="window.location.href='profile.html'" style="margin-top:10px; padding:6px 12px; background:#198be7; color:#fff; border:none; border-radius:5px; cursor:pointer;">Edit Profile</button>
+    </div>
+  </div>
+
+  <div id="student-offers">
+    <h4>Student Offers</h4>
+    <p style="font-size:0.9em; color:#30475a; margin:8px 0;">Exclusive perks for students!</p>
+    <button onclick="window.location.href='offers.html'" style="width:100%; margin-top:8px; padding:8px 12px; background:#198be7; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">View All Offers</button>
+  </div>
+
+  <div id="calendar">
+    <h4>Hackathon Calendar</h4>
+    <div id="calendar-dates"></div>
   </div>
 </div>
 
-    <div id="past-searches">
-      <h4>Past Searches</h4>
-      <ul id="search-history"></ul>
-    </div>
-    <div id="calendar">
-      <h4>Hackathon Calendar</h4>
-      <div id="calendar-dates"></div>
+
+    <div id="main">
+      <h2>Upcoming/Ongoing Hackathons</h2>
+      <div id="hackathon-list"></div>
     </div>
   </div>
-  <div id="main">
-    <h2>Upcoming/Ongoing Hackathons</h2>
-    <div id="hackathon-list"></div>
-  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
