@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Smart India Hackathon 2025",
+    "location": "IIT Delhi, New Delhi",
+    "date": "2025-12-12",
+    "prize": "₹1,00,000+",
+    "eligibility": "UG/PG Engineering students",
+    "timeline": "Dec 12-14, 2025",
+    "description": "Mega annual hackathon focused on innovative tech solutions for real-life problems. Teams compete nationally."
+  },
+  {
+    "id": 2,
+    "name": "CodeFunDo++",
+    "location": "IIT Bombay, Mumbai",
+    "date": "2025-11-25",
+    "prize": "MacBooks, ₹75,000",
+    "eligibility": "All engineering students",
+    "timeline": "Nov 25-28, 2025",
+    "description": "Microsoft hackathon for social impact, open to Indian engineering colleges. Themes include health, safety, and education."
+  },
+  {
+    "id": 3,
+    "name": "HackInOut 9.0",
+    "location": "IIIT Hyderabad, Hyderabad",
+    "date": "2025-12-18",
+    "prize": "₹2,50,000+",
+    "eligibility": "Student teams (UG/PG)",
+    "timeline": "Dec 18-20, 2025",
+    "description": "India’s premier 36-hour hackathon with tracks in AI, ML, blockchain and sustainability. Hosted annually."
+  },
+  {
+    "id": 4,
+    "name": "Synapse Hacks 2025",
+    "location": "BITS Pilani, Pilani",
+    "date": "2025-12-09",
+    "prize": "₹70,000",
+    "eligibility": "Engineering students (all branches)",
+    "timeline": "Dec 9-11, 2025",
+    "description": "Flagship BITS Pilani hackathon supporting IoT, robotics, and fintech ideas. Collaboration with national sponsors."
+  },
+  {
+    "id": 5,
+    "name": "IIT Kanpur E-Summit Hackathon",
+    "location": "IIT Kanpur, Kanpur",
+    "date": "2025-12-02",
+    "prize": "₹40,000",
+    "eligibility": "UG/PG",
+    "timeline": "Dec 2-3, 2025",
+    "description": "Annual entrepreneurship themed hackathon for India’s top student innovators."
+  },
+  {
+    "id": 6,
+    "name": "Technozion Hackathon",
+    "location": "NIT Warangal, Warangal",
+    "date": "2025-11-28",
+    "prize": "₹1,00,000",
+    "eligibility": "Students (all streams)",
+    "timeline": "Nov 28-30, 2025",
+    "description": "Premier hackathon from NIT Warangal, with themes including AI for good and green technologies."
+  },
+  {
+    "id": 7,
+    "name": "InOut Campus Hack",
+    "location": "IIT Madras, Chennai",
+    "date": "2025-12-14",
+    "prize": "₹60,000",
+    "eligibility": "Open to engineering colleges",
+    "timeline": "Dec 14-16, 2025",
+    "description": "National-level intense coding contest focused on product development and rapid prototyping."
+  },
+  {
+    "id": 8,
+    "name": "Techfest Hackathon",
+    "location": "IIT Bombay, Mumbai",
+    "date": "2025-12-21",
+    "prize": "₹80,000",
+    "eligibility": "Students (UG/PG)",
+    "timeline": "Dec 21-23, 2025",
+    "description": "Asia’s largest student hackathon, a part of IIT Bombay’s Techfest with pan-India participation."
+  },
+  {
+    "id": 9,
+    "name": "Code Hackathon",
+    "location": "VIT Vellore, Vellore",
+    "date": "2025-12-05",
+    "prize": "₹50,000",
+    "eligibility": "Undergrads & Masters",
+    "timeline": "Dec 5-7, 2025",
+    "description": "VIT Vellore flagship coding marathon for innovative solutions in tech and software."
+  },
+  {
+    "id": 10,
+    "name": "GitHub India Hackathon",
+    "location": "Virtual & Bengaluru",
+    "date": "2025-12-10",
+    "prize": "₹1,20,000",
+    "eligibility": "Indian student teams",
+    "timeline": "Dec 10-13, 2025",
+    "description": "GitHub India virtual-offline blended hackathon for open-source and community-driven projects."
+  },
+  {
+    "id": 11,
+    "name": "BYJU’S Hackathon",
+    "location": "IIT Kharagpur, Kharagpur",
+    "date": "2025-12-16",
+    "prize": "₹55,000 and internships",
+    "eligibility": "Engineering students + UG/PG",
+    "timeline": "Dec 16-18, 2025",
+    "description": "BYJU’S EdTech focused student hackathon for tools, platforms and analytics."
+  },
+  {
+    "id": 12,
+    "name": "Flipkart GRID 2025",
+    "location": "Online & Bengaluru",
+    "date": "2025-11-22",
+    "prize": "₹1,50,000",
+    "eligibility": "All engineering colleges",
+    "timeline": "Nov 22-24, 2025",
+    "description": "Flipkart’s annual tech innovation contest, case study & solution hackathon."
+  },
+  {
+    "id": 13,
+    "name": "Google Student Hackathon India",
+    "location": "IIT Guwahati, Guwahati",
+    "date": "2025-11-29",
+    "prize": "₹85,000 and Google gear",
+    "eligibility": "Engineering undergrads (India)",
+    "timeline": "Nov 29-Dec 1, 2025",
+    "description": "Google’s student hackathon for product and cloud ideas. Grand finale at IIT Guwahati."
+  },
+  {
+    "id": 14,
+    "name": "SIH Internal College Round",
+    "location": "Jadavpur University, Kolkata",
+    "date": "2025-12-06",
+    "prize": "₹35,000",
+    "eligibility": "Campus teams",
+    "timeline": "Dec 6-7, 2025",
+    "description": "Internal selection round for Smart India Hackathon, Jadavpur University."
+  },
+  {
+    "id": 15,
+    "name": "Techathon",
+    "location": "DTU, Delhi",
+    "date": "2025-12-17",
+    "prize": "₹40,000",
+    "eligibility": "Engineering students",
+    "timeline": "Dec 17-19, 2025",
+    "description": "DTU’s annual open hackathon for multi-theme challenges including AI, IoT, and software engineering."
+  }
+]

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f6fbff;
+    }
+    .container {
+      max-width: 420px;
+      margin: 48px auto;
+      padding: 32px 28px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 26px #bad8f576;
+      border-left: 7px solid #2566a3;
+    }
+    h2 {
+      color: #1867be;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+      color: #2566a3;
+      display: block;
+      margin-top: 18px;
+    }
+    input[type="text"] {
+      width: 96%;
+      padding: 7px 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #bad8f5;
+      font-size: 1em;
+      background: #eef6fc;
+    }
+    .save-btn {
+      margin-top: 22px;
+      width: 100%;
+      padding: 11px;
+      background: #198be7;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-weight: bold;
+    }
+    .save-btn:hover {
+      background: #166ad5;
+    }
+    .profile-block {
+      margin-top: 24px;
+      padding: 8px 0;
+      font-size: 1.08em;
+    }
+    .location-block {
+      margin-top: 16px;
+      font-size: 1.05em;
+      color: #2c3e52;
+      background: #e9f2fd;
+      border-radius: 7px;
+      padding: 9px;
+    }
+    .error {
+      color: #c0392b;
+      margin-top: 10px;
+    }
+    .success-message {
+      margin-top: 16px;
+      padding: 12px;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 7px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Profile</h2>
+    <form id="profile-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required placeholder="Enter your name">
+
+      <label for="branch">Branch:</label>
+      <input type="text" id="branch" required placeholder="E.g. CSE, ECE">
+
+      <label for="college">College:</label>
+      <input type="text" id="college" required placeholder="Enter your college">
+
+      <button type="submit" class="save-btn">Save Profile</button>
+    </form>
+    <div id="profile-block" class="profile-block" style="display:none;"></div>
+    <div id="location-block" class="location-block"></div>
+    <div id="error" class="error"></div>
+    <div id="success-message" class="success-message" style="display:none;"></div>
+  </div>
+  <script>
+    // Geolocation and profile logic
+    function showLocationBlock() {
+      const locationDiv = document.getElementById('location-block');
+      locationDiv.textContent = "Detecting your location...";
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude } = pos.coords;
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+              .then(response => response.json())
+              .then(locationData => {
+                let city = locationData.address.city
+                  || locationData.address.town
+                  || locationData.address.village
+                  || locationData.address.suburb
+                  || "Unknown";
+                let state = locationData.address.state || "";
+                let country = locationData.address.country || "";
+                const locationString = `${city}, ${state}, ${country}`;
+                locationDiv.innerHTML =
+                  `<strong>Your Location:</strong> ${locationString}`;
+                // Save location to localStorage for dashboard use
+                localStorage.studentLocation = locationString;
+              })
+              .catch(() => {
+                locationDiv.innerHTML =
+                  `<strong>Your Coordinates:</strong> ${latitude.toFixed(3)}, ${longitude.toFixed(3)}<br>
+                  <span style="color:#888;">(Could not convert to city)</span>`;
+              });
+          },
+          (err) => {
+            locationDiv.innerHTML =
+              `<span style="color:#c0392b;"><strong>Could not get your location.</strong></span>`;
+          }
+        );
+      } else {
+        locationDiv.innerHTML =
+          `<span style="color:#c0392b;"><strong>Geolocation not supported in your browser.</strong></span>`;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", showLocationBlock);
+
+    // Profile saving/display logic
+    const form = document.getElementById('profile-form');
+    const block = document.getElementById('profile-block');
+    const errorDiv = document.getElementById('error');
+    const successDiv = document.getElementById('success-message');
+
+    // Load profile if already saved
+    function loadProfile() {
+      if (localStorage.studentProfile) {
+        const profile = JSON.parse(localStorage.studentProfile);
+        block.innerHTML = `
+          <strong>Name:</strong> ${profile.name}<br>
+          <strong>Branch:</strong> ${profile.branch}<br>
+          <strong>College:</strong> ${profile.college}
+        `;
+        block.style.display = "block";
+        form.style.display = "none";
+        // Auto redirect after 3 seconds
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    }
+    loadProfile();
+
+    // Save profile on submit
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      errorDiv.textContent = "";
+      const name = document.getElementById('name').value.trim();
+      const branch = document.getElementById('branch').value.trim();
+      const college = document.getElementById('college').value.trim();
+      if (!name || !branch || !college) {
+        errorDiv.textContent = "Please fill in all fields.";
+        return;
+      }
+      const profile = { name, branch, college };
+      localStorage.studentProfile = JSON.stringify(profile);
+      
+      // Show success and profile
+      block.innerHTML = `
+        <strong>Name:</strong> ${name}<br>
+        <strong>Branch:</strong> ${branch}<br>
+        <strong>College:</strong> ${college}
+      `;
+      block.style.display = "block";
+      form.style.display = "none";
+      successDiv.textContent = "Profile saved! Redirecting to dashboard in 3 seconds...";
+      successDiv.style.display = "block";
+
+      // Redirect to dashboard after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

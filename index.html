@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hackathon Journey Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="sidebar">
+    <div id="profile">
+  <h3>Student Profile</h3>
+  <div id="profile-data">
+    <p>Name: <span id="student-name">Not set</span></p>
+    <p>Branch: <span id="student-branch">Not set</span></p>
+    <p>College: <span id="student-college">Not set</span></p>
+    <p>Location: <span id="student-location">Not set</span></p>
+    <button onclick="window.location.href='profile.html'" style="margin-top:10px; padding:6px 12px; background:#198be7; color:#fff; border:none; border-radius:5px; cursor:pointer;">Edit Profile</button>
+  </div>
+</div>
+
+    <div id="past-searches">
+      <h4>Past Searches</h4>
+      <ul id="search-history"></ul>
+    </div>
+    <div id="calendar">
+      <h4>Hackathon Calendar</h4>
+      <div id="calendar-dates"></div>
+    </div>
+  </div>
+  <div id="main">
+    <h2>Upcoming/Ongoing Hackathons</h2>
+    <div id="hackathon-list"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

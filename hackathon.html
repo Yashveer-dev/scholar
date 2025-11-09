@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Journey Plan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="journey-container"></div>
+  <script>
+    // ========= Hackathon details logic for hackathon.html =========
+
+    // If you have real API endpoints, replace them below. Otherwise, will use mock json files in /data
+    const HACKATHON_API_URL = 'https://api.example.com/hackathons?location=india';
+    const FARES_API_URL = 'https://api.example.com/fares';
+    const HOTELS_API_URL = 'https://api.example.com/hotels';
+
+    const hackathonId = localStorage.getItem('selectedHackathonId');
+    const journeyDiv = document.getElementById('journey-container');
+
+    async function getHackathonData() {
+      let hacks;
+      try {
+        // Try real API (if available)
+        const res = await fetch(HACKATHON_API_URL);
+        if (!res.ok) throw new Error('API failed');
+        hacks = await res.json();
+      } catch {
+        // Fallback to mock
+        hacks = await fetch('data/hackathons.json').then(r => r.json());
+      }
+      return hacks.find(h => h.id == hackathonId);
+    }
+
+    async function getFares(location) {
+      try {
+        const res = await fetch(`${FARES_API_URL}?city=${encodeURIComponent(location)}`);
+        if (!res.ok) throw new Error('API failed');
+        const fares = await res.json();
+        return fares;
+      } catch {
+        // Fallback to mock fares
+        const fares = await fetch('data/fares.json').then(r => r.json());
+        return fares[location];
+      }
+    }
+
+    async function getHotels(location) {
+      try {
+        const res = await fetch(`${HOTELS_API_URL}?city=${encodeURIComponent(location)}`);
+        if (!res.ok) throw new Error('API failed');
+        const hotels = await res.json();
+        return hotels;
+      } catch {
+        // Fallback to mock hotels
+        const hotels = await fetch('data/hotels.json').then(r => r.json());
+        return hotels[location];
+      }
+    }
+
+    function formatDateTime(dtStr) {
+      if (!dtStr || dtStr === "N/A") return "N/A";
+      const [date, time] = dtStr.split("T");
+      return `${date} ${time}`;
+    }
+
+    async function renderHackathonDetails() {
+      const hackathon = await getHackathonData();
+      if (!hackathon) {
+        journeyDiv.innerHTML =
+          '<div style="color:#c0392b;">Could not load hackathon details.</div>';
+        return;
+      }
+
+      journeyDiv.innerHTML = `
+        <h2>${hackathon.name}</h2>
+        <p><strong>Location:</strong> ${hackathon.location}</p>
+        <p><strong>Date:</strong> ${hackathon.date}</p>
+        <p><strong>Prize:</strong> ${hackathon.prize}</p>
+        <p><strong>Eligibility:</strong> ${hackathon.eligibility}</p>
+        <p><strong>Timeline:</strong> ${hackathon.timeline}</p>
+        <h3>Journey Plan (Arrive 2 Days Before)</h3>
+        <div id="fares-table"></div>
+        <h3>Best Hotels</h3>
+        <div id="hotels-list"></div>
+        <div id="your-location"></div>
+      `;
+
+      // Show fares (new table with more info)
+      const fare = await getFares(hackathon.location);
+      if (fare) {
+        document.getElementById('fares-table').innerHTML = `
+          <table>
+            <tr>
+              <th>Mode</th>
+              <th>Name</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th>Estimated Price</th>
+            </tr>
+            <tr>
+              <td>Bus</td>
+              <td>${fare.bus.name}</td>
+              <td>${formatDateTime(fare.bus.departure)}</td>
+              <td>${formatDateTime(fare.bus.arrival)}</td>
+              <td>${fare.bus.price}</td>
+            </tr>
+            <tr>
+              <td>Train</td>
+              <td>${fare.train.name}</td>
+              <td>${formatDateTime(fare.train.departure)}</td>
+              <td>${formatDateTime(fare.train.arrival)}</td>
+              <td>${fare.train.price}</td>
+            </tr>
+            <tr>
+              <td>Flight</td>
+              <td>${fare.flight.name}</td>
+              <td>${formatDateTime(fare.flight.departure)}</td>
+              <td>${formatDateTime(fare.flight.arrival)}</td>
+              <td>${fare.flight.price}</td>
+            </tr>
+          </table>
+        `;
+      } else {
+        document.getElementById('fares-table').innerHTML =
+          '<div style="color:#c0392b;">Could not load fare data.</div>';
+      }
+
+      // Show hotels
+      const hotels = await getHotels(hackathon.location);
+      if (hotels && hotels.length > 0) {
+        document.getElementById('hotels-list').innerHTML = `
+          <ul>
+            ${hotels.map(h => `<li>${h.name} (⭐${h.rating}) - ${h.price}</li>`).join('')}
+          </ul>
+        `;
+      } else {
+        document.getElementById('hotels-list').innerHTML =
+          '<div style="color:#c0392b;">Could not load hotels data.</div>';
+      }
+
+      // Show geolocation (with city conversion via Nominatim)
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude } = pos.coords;
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+              .then(response => response.json())
+              .then(locationData => {
+                let city = locationData.address.city
+                  || locationData.address.town
+                  || locationData.address.village
+                  || locationData.address.suburb
+                  || "Unknown";
+                let state = locationData.address.state || "";
+                let country = locationData.address.country || "";
+                document.getElementById('your-location').innerHTML =
+                  `<p><strong>Your Location:</strong> ${city}, ${state}, ${country}</p>
+                   <p style="color:#666;">(Approximate location based on your device)</p>`;
+              })
+              .catch(() => {
+                document.getElementById('your-location').innerHTML =
+                  `<p><strong>Your Coordinates:</strong> ${latitude.toFixed(3)}, ${longitude.toFixed(3)}</p>
+                   <p style="color:#666;">(Could not convert to city name)</p>`;
+              });
+          },
+          (err) => {
+            document.getElementById('your-location').innerHTML =
+              `<p style="color:#c0392b;"><strong>Could not get your location.</strong></p>`;
+          }
+        );
+      } else {
+        document.getElementById('your-location').innerHTML =
+          `<p style="color:#c0392b;"><strong>Geolocation not supported in your browser.</strong></p>`;
+      }
+    }
+
+    // Run render at startup
+    renderHackathonDetails();
+  </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+{
+  "IIT Delhi, New Delhi": {
+    "bus": {
+      "name": "Red Express A/C",
+      "price": "₹2400",
+      "departure": "2025-12-10T18:00",
+      "arrival": "2025-12-12T06:30"
+    },
+    "train": {
+      "name": "AP Superfast Express",
+      "price": "₹1250",
+      "departure": "2025-12-10T20:00",
+      "arrival": "2025-12-11T21:30"
+    },
+    "flight": {
+      "name": "IndiGo 6E-226",
+      "price": "₹5700",
+      "departure": "2025-12-11T09:45",
+      "arrival": "2025-12-11T12:25"
+    }
+  },
+  "IIT Bombay, Mumbai": {
+    "bus": {
+      "name": "Jetliner Coaches",
+      "price": "₹2600",
+      "departure": "2025-11-23T16:00",
+      "arrival": "2025-11-25T07:30"
+    },
+    "train": {
+      "name": "Konark Express",
+      "price": "₹1000",
+      "departure": "2025-11-23T20:30",
+      "arrival": "2025-11-24T19:00"
+    },
+    "flight": {
+      "name": "Air India AI-514",
+      "price": "₹6200",
+      "departure": "2025-11-24T08:30",
+      "arrival": "2025-11-24T10:35"
+    }
+  },
+  "IIIT Hyderabad, Hyderabad": {
+    "bus": {
+      "name": "TSRTC Super Luxury",
+      "price": "₹600",
+      "departure": "2025-12-16T17:30",
+      "arrival": "2025-12-16T22:00"
+    },
+    "train": {
+      "name": "Kacheguda Intercity",
+      "price": "₹450",
+      "departure": "2025-12-16T19:00",
+      "arrival": "2025-12-16T22:45"
+    },
+    "flight": {
+      "name": "IndiGo 6E-512",
+      "price": "₹3400",
+      "departure": "2025-12-17T07:15",
+      "arrival": "2025-12-17T08:10"
+    }
+  },
+  "BITS Pilani, Pilani": {
+    "bus": {
+      "name": "Rajasthan Roadways",
+      "price": "₹2250",
+      "departure": "2025-12-07T06:00",
+      "arrival": "2025-12-09T07:00"
+    },
+    "train": {
+      "name": "Secunderabad Hisar Exp",
+      "price": "₹1600",
+      "departure": "2025-12-07T18:30",
+      "arrival": "2025-12-08T22:10"
+    },
+    "flight": {
+      "name": "SpiceJet SG-342",
+      "price": "₹6300",
+      "departure": "2025-12-08T10:00",
+      "arrival": "2025-12-08T12:10"
+    }
+  },
+  "IIT Kanpur, Kanpur": {
+    "bus": {
+      "name": "UP Roadways Gold",
+      "price": "₹2000",
+      "departure": "2025-11-30T19:00",
+      "arrival": "2025-12-02T08:00"
+    },
+    "train": {
+      "name": "Sanghamitra Express",
+      "price": "₹1100",
+      "departure": "2025-12-01T22:00",
+      "arrival": "2025-12-02T19:30"
+    },
+    "flight": {
+      "name": "Vistara UK-826",
+      "price": "₹5800",
+      "departure": "2025-12-01T06:45",
+      "arrival": "2025-12-01T09:20"
+    }
+  },
+  "NIT Warangal, Warangal": {
+    "bus": {
+      "name": "Warangal Direct",
+      "price": "₹330",
+      "departure": "2025-11-26T13:00",
+      "arrival": "2025-11-26T16:00"
+    },
+    "train": {
+      "name": "Warangal Memu",
+      "price": "₹210",
+      "departure": "2025-11-26T14:15",
+      "arrival": "2025-11-26T17:05"
+    },
+    "flight": {
+      "name": "None",
+      "price": "₹3200",
+      "departure": "N/A",
+      "arrival": "N/A"
+    }
+  },
+  "IIT Madras, Chennai": {
+    "bus": {
+      "name": "TNSETC Air Bus",
+      "price": "₹900",
+      "departure": "2025-12-12T19:00",
+      "arrival": "2025-12-13T06:00"
+    },
+    "train": {
+      "name": "Vijayawada Chennai Express",
+      "price": "₹480",
+      "departure": "2025-12-12T21:00",
+      "arrival": "2025-12-13T08:15"
+    },
+    "flight": {
+      "name": "IndiGo 6E-558",
+      "price": "₹3700",
+      "departure": "2025-12-13T07:15",
+      "arrival": "2025-12-13T08:25"
+    }
+  },
+  "VIT Vellore, Vellore": {
+    "bus": {
+      "name": "Vellore Express",
+      "price": "₹950",
+      "departure": "2025-12-03T19:00",
+      "arrival": "2025-12-04T05:45"
+    },
+    "train": {
+      "name": "Vijaywada Vellore Exp",
+      "price": "₹650",
+      "departure": "2025-12-03T20:30",
+      "arrival": "2025-12-04T07:30"
+    },
+    "flight": {
+      "name": "None",
+      "price": "₹3500",
+      "departure": "N/A",
+      "arrival": "N/A"
+    }
+  },
+  "IIT Kharagpur, Kharagpur": {
+    "bus": {
+      "name": "WBSTC Kharagpur",
+      "price": "₹2200",
+      "departure": "2025-12-14T20:00",
+      "arrival": "2025-12-16T09:00"
+    },
+    "train": {
+      "name": "Kharagpur Special",
+      "price": "₹1300",
+      "departure": "2025-12-14T21:00",
+      "arrival": "2025-12-15T22:00"
+    },
+    "flight": {
+      "name": "IndiGo 6E-102",
+      "price": "₹6600",
+      "departure": "2025-12-15T09:15",
+      "arrival": "2025-12-15T11:40"
+    }
+  },
+  "DTU, Delhi": {
+    "bus": {
+      "name": "Delhi Starline",
+      "price": "₹2400",
+      "departure": "2025-12-15T18:00",
+      "arrival": "2025-12-17T06:30"
+    },
+    "train": {
+      "name": "Swarna Jayanti Exp",
+      "price": "₹1250",
+      "departure": "2025-12-16T18:45",
+      "arrival": "2025-12-17T21:30"
+    },
+    "flight": {
+      "name": "AirAsia I5-756",
+      "price": "₹5700",
+      "departure": "2025-12-16T10:00",
+      "arrival": "2025-12-16T12:10"
+    }
+  },
+  "Jadavpur University, Kolkata": {
+    "bus": {
+      "name": "Kolkata Shuttle",
+      "price": "₹2000",
+      "departure": "2025-12-04T17:00",
+      "arrival": "2025-12-06T09:30"
+    },
+    "train": {
+      "name": "Howrah Mail",
+      "price": "₹1400",
+      "departure": "2025-12-05T15:00",
+      "arrival": "2025-12-06T10:00"
+    },
+    "flight": {
+      "name": "SpiceJet SG-496",
+      "price": "₹6600",
+      "departure": "2025-12-05T09:00",
+      "arrival": "2025-12-05T11:35"
+    }
+  },
+  "IIT Guwahati, Guwahati": {
+    "bus": {
+      "name": "Assam Express",
+      "price": "₹3400",
+      "departure": "2025-11-27T06:00",
+      "arrival": "2025-11-29T20:00"
+    },
+    "train": {
+      "name": "Brahmaputra Mail",
+      "price": "₹2100",
+      "departure": "2025-11-28T19:00",
+      "arrival": "2025-11-29T16:00"
+    },
+    "flight": {
+      "name": "IndiGo 6E-372",
+      "price": "₹7900",
+      "departure": "2025-11-29T08:50",
+      "arrival": "2025-11-29T11:00"
+    }
+  },
+  "Online & Bengaluru": {
+    "bus": {
+      "name": "Bengaluru Skyliner",
+      "price": "₹950",
+      "departure": "2025-11-20T21:00",
+      "arrival": "2025-11-21T07:30"
+    },
+    "train": {
+      "name": "Vijayawada Yeshvantpur Exp",
+      "price": "₹650",
+      "departure": "2025-11-20T19:20",
+      "arrival": "2025-11-21T05:15"
+    },
+    "flight": {
+      "name": "GoAir G8-523",
+      "price": "₹3800",
+      "departure": "2025-11-21T09:15",
+      "arrival": "2025-11-21T11:35"
+    }
+  },
+  "Virtual & Bengaluru": {
+    "bus": {
+      "name": "Bengaluru Skynet",
+      "price": "₹950",
+      "departure": "2025-12-08T21:00",
+      "arrival": "2025-12-09T07:30"
+    },
+    "train": {
+      "name": "Vijayawada Yeshvantpur SF",
+      "price": "₹650",
+      "departure": "2025-12-08T19:20",
+      "arrival": "2025-12-09T05:15"
+    },
+    "flight": {
+      "name": "IndiGo 6E-338",
+      "price": "₹3800",
+      "departure": "2025-12-09T11:20",
+      "arrival": "2025-12-09T13:35"
+    }
+  }
+}

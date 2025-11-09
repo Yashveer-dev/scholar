@@ -1,0 +1,72 @@
+{
+  "IIT Delhi, New Delhi": [
+    {"name": "The Grand Delhi", "rating": 4.6, "price": "₹3200"},
+    {"name": "Student Stay Inn", "rating": 4.2, "price": "₹1600"},
+    {"name": "Elegant Residency", "rating": 4.4, "price": "₹2100"}
+  ],
+  "IIT Bombay, Mumbai": [
+    {"name": "Powai Lake View Hotel", "rating": 4.5, "price": "₹3000"},
+    {"name": "City Youth Hostel", "rating": 4.1, "price": "₹1500"},
+    {"name": "TechFest Residency", "rating": 4.3, "price": "₹2300"}
+  ],
+  "IIIT Hyderabad, Hyderabad": [
+    {"name": "Hyderabad Central Suites", "rating": 4.4, "price": "₹2200"},
+    {"name": "Student Tech Stay", "rating": 4.3, "price": "₹1200"},
+    {"name": "Gachibowli Residency", "rating": 4.2, "price": "₹1800"}
+  ],
+  "BITS Pilani, Pilani": [
+    {"name": "Pilani Palace Hotel", "rating": 4.5, "price": "₹2700"},
+    {"name": "BITS Guest House", "rating": 4.2, "price": "₹1100"},
+    {"name": "Synapse Hotel", "rating": 4.3, "price": "₹1550"}
+  ],
+  "IIT Kanpur, Kanpur": [
+    {"name": "Kanpur Elite Suites", "rating": 4.4, "price": "₹1900"},
+    {"name": "E-Summit Residency", "rating": 4.2, "price": "₹1350"},
+    {"name": "College View Inn", "rating": 4.3, "price": "₹1600"}
+  ],
+  "NIT Warangal, Warangal": [
+    {"name": "Warangal Towers", "rating": 4.4, "price": "₹1850"},
+    {"name": "Technozion Inn", "rating": 4.3, "price": "₹990"},
+    {"name": "NIT Residency", "rating": 4.1, "price": "₹1200"}
+  ],
+  "IIT Madras, Chennai": [
+    {"name": "Chennai Central Hotel", "rating": 4.5, "price": "₹2100"},
+    {"name": "Madras Tech Hostel", "rating": 4.2, "price": "₹1000"},
+    {"name": "Campus Comfort Inn", "rating": 4.1, "price": "₹1450"}
+  ],
+  "VIT Vellore, Vellore": [
+    {"name": "Vellore Residency", "rating": 4.4, "price": "₹1400"},
+    {"name": "Code Inn", "rating": 4.3, "price": "₹1200"},
+    {"name": "Student Stay Hostel", "rating": 4.2, "price": "₹900"}
+  ],
+  "IIT Kharagpur, Kharagpur": [
+    {"name": "Kharagpur Palace", "rating": 4.5, "price": "₹2500"},
+    {"name": "BYJU'S Residency", "rating": 4.3, "price": "₹1400"},
+    {"name": "Techview Hostel", "rating": 4.2, "price": "₹1100"}
+  ],
+  "DTU, Delhi": [
+    {"name": "DTU Executive Inn", "rating": 4.5, "price": "₹2400"},
+    {"name": "Delhi Tech Hostel", "rating": 4.3, "price": "₹1200"},
+    {"name": "City Campus Residency", "rating": 4.2, "price": "₹1700"}
+  ],
+  "Jadavpur University, Kolkata": [
+    {"name": "Kolkata Central Suites", "rating": 4.5, "price": "₹1800"},
+    {"name": "University Guest House", "rating": 4.3, "price": "₹1100"},
+    {"name": "Smart Stay Hostel", "rating": 4.1, "price": "₹850"}
+  ],
+  "IIT Guwahati, Guwahati": [
+    {"name": "Guwahati Riverside Hotel", "rating": 4.6, "price": "₹2800"},
+    {"name": "Student Comfort Inn", "rating": 4.3, "price": "₹1300"},
+    {"name": "Expotech Hostel", "rating": 4.2, "price": "₹900"}
+  ],
+  "Online & Bengaluru": [
+    {"name": "Bengaluru Diamond Hotel", "rating": 4.5, "price": "₹2200"},
+    {"name": "GRID Conference Stay", "rating": 4.2, "price": "₹1200"},
+    {"name": "Tech Center Residency", "rating": 4.3, "price": "₹1500"}
+  ],
+  "Virtual & Bengaluru": [
+    {"name": "Bengaluru Innovator Suites", "rating": 4.4, "price": "₹1700"},
+    {"name": "GitHub Inn", "rating": 4.2, "price": "₹950"},
+    {"name": "Open Source Hostel", "rating": 4.3, "price": "₹800"}
+  ]
+}
